@@ -14,12 +14,13 @@ for k, label in enumerate(labels):
 
 
 def classify(text):
-    
-    x = np.zeros((1, 48, 256), dtype='float32')
 
-    if len(text) > 48:
-        text = text[:48]
-    
+    # x = np.zeros((1, 48, 256), dtype='float32')
+    x = np.zeros((1, 26, 256), dtype='float32')   
+    # if len(text) > 48:
+    if len(text) > 26:
+        text = text[:26]
+
     for k, ch in enumerate(bytes(text.encode('utf-8'))):
         x[0, k, int(ch)] = 1.0
 
@@ -27,7 +28,7 @@ def classify(text):
     idx = out.argmax()
 
     #print('Text: "{}" is classified as "{}"'.format(text, idx2label[idx]))
-    return idx2label[idx]
+    return {"entity" : idx2label[idx], "conf" : max(out[0])}
 
 '''
 if __name__=='__main__':

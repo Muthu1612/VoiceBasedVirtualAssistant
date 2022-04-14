@@ -8,10 +8,6 @@ commands:
     input: Tell me the time
     entity: time
     action: getTime
-  - command:
-    input: What is the time
-    entity: time
-    action: getTime
   # Date
   - command:
     input: What date is?
@@ -41,9 +37,29 @@ commands:
     action: getWeather
   # Open
   - command:
-    input: Open Google
+    input: Open Notepad
     entity: open
-    action: google
+    action: notepad
+  - command:
+    input: Start Notepad
+    entity: open
+    action: notepad
+  - command:
+    input: Open Chrome
+    entity: open
+    action: chrome
+  - command:
+    input: Start Chrome
+    entity: open
+    action: chrome
+  - command:
+    input: Start Media player classic
+    entity: open
+    action: mpc
+  - command:
+    input: Open Media player classic
+    entity: open
+    action: mpc
   # Close
   - command:
     input: Exit
@@ -57,9 +73,6 @@ commands:
     input: Stop
     entity: close
     action: exit
-
-
-
 
 
 

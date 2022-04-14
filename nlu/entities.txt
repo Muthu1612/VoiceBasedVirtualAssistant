@@ -1,6 +1,8 @@
-time\getWeather
-time\getDate
 close\exit
-time\getYear
-open\google
+time\getDate
+open\notepad
+time\getWeather
+open\mpc
 time\getTime
+time\getYear
+open\chrome

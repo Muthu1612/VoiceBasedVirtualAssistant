@@ -22,6 +22,7 @@ for command in data['commands']:
 
 max_sent = max([len(bytes(x.encode('utf-8'))) for x in inputs])
 
+# number of examples, seq length,  vocab_size)
 
 
 input_data = np.zeros((len(inputs), max_sent, 256), dtype='float32')
@@ -71,14 +72,14 @@ model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['acc']
 
 model.fit(input_data, output_data, epochs=512)
 
-model.save('nlu\model.h5')
+model.save('model.h5')
 
 
 def classify(text):
-    
+
     x = np.zeros((1, max_sent, 256), dtype='float32')
 
-    
+
     for k, ch in enumerate(bytes(text.encode('utf-8'))):
         x[0, k, int(ch)] = 1.0
 
