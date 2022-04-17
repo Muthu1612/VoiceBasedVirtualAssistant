@@ -1,0 +1,376 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
+         "responses": ["Hello, thanks for asking", "Good to see you again", "Hi there, how can I help?"],
+         "context": [""]
+        },
+        {"tag": "goodbye",
+         "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
+         "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+         "context": [""]
+        },
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure"],
+         "context": [""]
+        },
+        {"tag": "noanswer",
+         "patterns": [],
+         "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
+         "context": [""]
+        },
+        {"tag": "thanks",
+        "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+        "responses": ["Happy to help!", "Any time!", "My pleasure"],
+        "context": [""]
+        },
+        {"tag": "Amazonsagemaker_define",
+        "patterns": ["What is Amazon SageMaker ", "what is known as Amazon SageMaker", "Define Amazon SageMaker", "Explain about Amazon SageMaker", "Describe Amazon SageMaker"],
+        "responses": ["Amazon SageMaker is a fully managed service that provides every developer and data scientist with the ability to build, train, and deploy machine learning (ML) models quickly. SageMaker removes the heavy lifting from each step of the machine learning process to make it easier to develop high quality models"],
+        "context": [""]
+        },
+        {"tag": "Amazonsagemaker_service_availability",
+        "patterns": ["What is the service availability of Amazon SageMaker?","What is Amazon SageMaker's service availability?", "What is the Amazon SageMaker service availability?"],
+        "responses": ["Amazon SageMaker is designed for high availability. There are no maintenance windows or scheduled downtimes. SageMaker APIs run in Amazons proven, high-availability data centers, with service stack replication configured across three facilities in each AWS region to provide fault tolerance in the event of a server failure or Availability Zone outage."],
+        "context": [""]
+        },
+        {"tag": "Amazonsagemaker_security_measures",
+        "patterns": ["What security measures does Amazon SageMaker have?", "What are Amazon SageMaker's security features?", "What safeguards does Amazon SageMaker put in place?", "What protections does Amazon SageMaker put in place?"],
+        "responses": ["Amazon SageMaker ensures that ML model artifacts and other system artifacts are encrypted in transit and at rest. Requests to the SageMaker API and console are made over a secure (SSL) connection. You pass AWS Identity and Access Management roles to SageMaker to provide permissions to access resources on your behalf for training and deployment. You can use encrypted S3 buckets for model artifacts and data, as well as pass a KMS key to SageMaker notebooks, training jobs, and endpoints, to encrypt the attached ML storage volume."],
+        "context": [""]
+        },
+        {"tag": "if_enviromment",
+        "patterns": ["What if I have my own notebook, training, or hosting environment?", "What if I have my own laptop, training, or hosting setup?", "What if I already have a notebook, training, or hosting environment?"],
+        "responses": ["Amazon SageMaker provides a full end-to-end workflow, but you can continue to use your existing tools with SageMaker. You can easily transfer the results of each stage in and out of SageMaker as your business requirements dictate."],
+        "context": [""]
+        },
+        {"tag": "Amazonsagemaker_studio_define",
+        "patterns": ["What is Amazon SageMaker Studio ", "what is known as Amazon SageMaker Studio", "Define Amazon SageMaker Studio", "Explain about Amazon SageMaker Studio", "Describe Amazon SageMaker Studio"],
+        "responses": ["Amazon SageMaker Studio provides a single, web-based visual interface where you can perform all ML development steps. SageMaker Studio gives you complete access, control, and visibility into each step required to build, train, and deploy models. You can quickly upload data, create new notebooks, train and tune models, move back and forth between steps to adjust experiments, compare results, and deploy models to production all in one place, making you much more productive. All ML development activites including notebooks, experiment management, automatic model creation, debugging and profiling, and model drift detection can be performed within the unified SageMaker Studio visual interface."],
+        "context": [""]
+        },
+        {"tag": "Amazonsagemaker_autopilot_define",
+        "patterns": ["What is Amazon SageMaker Autopilot ", "what is known as Amazon SageMaker Autopilot", "Define Amazon SageMaker Autopilot", "Explain about Amazon SageMaker Autopilot", "Describe Amazon SageMaker Autopilot"],
+        "responses": ["Amazon SageMaker Autopilot is the industrys first automated machine learning capability that gives you complete control and visibility into your ML models. SageMaker Autopilot automatically inspects raw data, applies feature processors, picks the best set of algorithms, trains and tunes multiple models, tracks their performance, and then ranks the models based on performance, all with just a few clicks. The result is the best performing model that you can deploy at a fraction of the time normally required to train the model. You get full visibility into how the model was created and whats in it and SageMaker Autopilot integrates with Amazon SageMaker Studio. You can explore up to 50 different models generated by SageMaker Autopilot inside SageMaker Studio so its easy to pick the best model for your use case. SageMaker Autopilot can be used by people without machine learning experience to easily produce a model or it can be used by experienced developers to quickly develop a baseline model on which teams can further iterate."],
+        "context": [""]
+        },
+        {"tag": "Amazonsagemaker_autopilot_algorithms",
+        "patterns": ["What built-in algorithms are supported in Amazon SageMaker Autopilot?", "What built-in algorithms does Amazon SageMaker Autopilot support?", "In Amazon SageMaker Autopilot, which built-in algorithms are supported?", "Which built-in algorithms does Amazon SageMaker Autopilot support?"],
+        "responses": ["Amazon SageMaker Autopilot supports 2 built-in algorithms at launch: XGBoost and Linear Learner."],
+        "context": [""]
+        },
+        {"tag": "Amazonsagemaker_studio_notebook_define",
+        "patterns": ["What are Amazon SageMaker Studio Notebook ", "what is known as Amazon SageMaker Studio Notebook", "Define Amazon SageMaker Studio Notebook", "Explain about Amazon SageMaker Studio Notebook", "Describe Amazon SageMaker Studio Notebook"],
+        "responses": ["Amazon SageMaker Studio Notebook is a new collaborative, flexible, managed Jupyter notebook experience that is part of Amazon SageMaker Studio, a fully integrated development environment for machine learning."],
+        "context": [""]
+        },
+        {"tag": "Amazonsagemaker_notebook_support",
+        "patterns": ["What types of notebooks are supported?", "What are the many kind of notebooks that are supported?", "What notebook models are supported?", "Which notebook models are supported?"],
+        "responses": ["Currently, Jupyter notebooks are supported."],
+        "context": [""]
+        },
+        {"tag": "Amazonsagemaker_groundtruth_define",
+        "patterns": ["What is Amazon SageMaker Ground truth ", "what is known as Amazon SageMaker Ground Truth", "Define Amazon SageMaker Ground truth", "Explain about Amazon SageMaker Ground Truth", "Describe Amazon SageMaker Ground Truth"],
+        "responses": ["Amazon SageMaker Ground Truth provides automated data labeling using machine learning. SageMaker Ground Truth will first select a random sample of data and send it to Amazon Mechanical Turk to be labeled. The results are then used to train a labeling model that attempts to label a new sample of raw data automatically. The labels are committed when the model can label the data with a confidence score that meets or exceeds a threshold you set. Where the confidence score falls below your threshold, the data is sent to human labelers. Some of the data labeled by humans is used to generate a new training dataset for the labeling model, and the model is automatically retrained to improve its accuracy. This process repeats with each sample of raw data to be labeled. The labeling model becomes more capable of automatically labeling raw data with each iteration, and less data is routed to humans. Train Models"],
+        "context": [""]
+        },
+        {"tag": "Amazonsagemaker_experiments_define",
+        "patterns": ["What is Amazon SageMaker Experiments ", "what is known as Amazon SageMaker Experiments", "Define Amazon SageMaker Experiments", "Explain about Amazon SageMaker Experiments", "Describe Amazon SageMaker Experiments"],
+        "responses": ["Amazon SageMaker Experiments helps you organize and track iterations to machine learning models. SageMaker Experiments helps you manage iterations by automatically capturing the input parameters, configurations, and results, and storing them as experiments. You can work within the visual interface of SageMaker Studio, where you can browse active experiments, search for previous experiments by their characteristics, review previous experiments with their results, and compare experiment results visually."],
+        "context": [""]
+        },
+        {"tag": "Amazonsagemaker_debugger_define",
+        "patterns": ["What is Amazon SageMaker debugger ", "what is known as Amazon SageMaker debugger", "Define Amazon SageMaker debugger", "Explain about Amazon SageMaker debugger", "Describe Amazon SageMaker debugger"],
+        "responses": ["Amazon SageMaker Debugger makes the training process more transparent by automatically capturing real-time metrics during training such as training and validation, confusion matrices, and learning gradients to help improve model accuracy. The metrics from SageMaker Debugger can be visualized in Amazon SageMaker Studio for easy understanding. SageMaker Debugger can also generate warnings and remediation advice when common training problems are detected. With SageMaker Debugger, you can interpret how a model is working, representing an early step towards model explainability."],
+        "context": [""]
+        },
+        {"tag": "managedspottrain_define",
+        "patterns": ["What is Managed Spot Training? ", "what is known as Managed Spot Training?", "Define Managed Spot Training?", "Explain about Managed Spot Training?", "Describe Managed Spot Training?"],
+        "responses": ["Managed Spot Training with Amazon SageMaker lets you train your machine learning models using Amazon EC2 Spot instances, while reducing the cost of training your models by up to 90%."],
+        "context": [""]
+        },
+        {"tag": "sagemaker_datasources",
+        "patterns": ["What data sources can I easily pull into Amazon SageMaker?", "What data sources are easily accessible in Amazon SageMaker?", "What data sources can I access to in Amazon SageMaker?", "What types of data sources can I simply import into Amazon SageMaker?"],
+        "responses": ["You can specify the Amazon S3 location of your training data as part of creating a training job."],
+        "context": [""]
+        },
+        {"tag": "Amazonsagemaker_algo",
+        "patterns": ["What algorithms does Amazon SageMaker use to generate models?", "To create models, Amazon SageMaker employs which algorithms?", "Amazon SageMaker generates models using which algorithms?", "What types of data sources can I simply import into Amazon SageMaker?","What algorithms does Amazon SageMaker use to generate models?"],
+        "responses": ["Amazon SageMaker includes built-in algorithms for linear regression, logistic regression, k-means clustering, principal component analysis, factorization machines, neural topic modeling, latent dirichlet allocation, gradient boosted trees, sequence2sequence, time series forecasting, word2vec, and image classification. SageMaker also provides optimized Apache MXNet, Tensorflow, Chainer, PyTorch, Gluon, Keras, Horovod, Scikit-learn, and Deep Graph Library containers. In addition, Amazon SageMaker supports your custom training algorithms provided through a Docker image adhering to the documented specification."],
+        "context": [""]
+        },
+        {"tag": "automaticmodeltuning_define",
+        "patterns": ["What is Automatic Model Tuning? ", "what is known as Automatic Model Tuning?", "Define Automatic Model Tuning?", "Explain about Automatic Model Tuning?", "Describe Automatic Model Tuning"],
+        "responses": ["Most machine learning algorithms expose a variety of parameters that control how the underlying algorithm operates. Those parameters are generally referred to as hyperparameters and their values affect the quality of the trained models. Automatic model tuning is the process of finding a set of hyperparameters for an algorithm that can yield an optimal model."],
+        "context": [""]
+        },
+        {"tag": "automaticmodeltuning_models",
+        "patterns": ["What models can be tuned with Automatic Model Tuning? ", "What models can Automatic Model Tuning tune?", "What models may Automatic Model Tuning be used to tune?"],
+        "responses": ["You can run automatic model tuning in Amazon SageMaker on top of any algorithm as long as its scientifically feasible, including built-in SageMaker algorithms, deep neural networks, or arbitrary algorithms you bring to SageMaker in the form of Docker images."],
+        "context": [""]
+        },
+        {"tag": "underlyingtuningalgorithm_define",
+        "patterns": ["What is Underlying Tuning Algorithm? ", "what is known as Underlying Tuning Algorithm?", "Define Underlying Tuning Algorithm?", "Explain about Underlying Tuning Algorithm", "Describe Underlying Tuning Algorithm"],
+        "responses": ["Currently, our algorithm for tuning hyperparameters is a customized implementation of Bayesian Optimization. It aims to optimize a customer specified objective metric throughout the tuning process. Specifically, it checks the object metric of completed training jobs, and leverages the knowledge to infer the hyperparameter combination for the next training job"],
+        "context": [""]
+        },
+        {"tag": "define_reinforcementlearning",
+        "patterns": ["What is Reinforcement Learning? ", "what is known as Reinforcement Learning?", "Define Reinforcement Learning", "Explain about Reinforcement Learning", "Describe Reinforcement Learning"],
+        "responses": ["Reinforcement learning is a machine learning technique that enables an agent to learn in an interactive environment by trial and error using feedback from its own actions and experiences. "],
+        "context": [""]
+        },
+        {"tag": "reinforcementlearning_environments",
+        "patterns": ["What type of environments can I use for training reinforcement learning models?", "What kind of training environments can I utilise for reinforcement learning models?", "What environments can I use to train reinforcement learning models in?"],
+        "responses": ["Amazon SageMaker RL supports a number of different environments for training reinforcement learning models. You can use AWS services such as AWS RoboMaker, open source environments or custom environments developed using Open AI Gym interfaces, or commercial simulation environments such as MATLAB and SimuLink."],
+        "context": [""]
+        },
+        {"tag": "define_sagemaker_model_monitor",
+        "patterns": ["What is Amazon Sagemaker Model Monitor? ", "what is known as Amazon Sagemaker Model Monitor?", "Define Amazon Sagemaker Model Monitor", "Explain about Amazon Sagemaker Model Monitor", "Describe Amazon Sagemaker Model Monitor"],
+        "responses": ["Amazon SageMaker Model Monitor allows developers to detect and remediate concept drift. SageMaker Model Monitor automatically detects concept drift in deployed models and provides detailed alerts that help identify the source of the problem. All models trained in SageMaker automatically emit key metrics that can be collected and viewed in SageMaker Studio. From inside SageMaker Studio you can configure data to be collected, how to view it, and when to receive alerts."],
+        "context": [""]
+        },
+        {"tag": "sagemaker_hostmodel",
+        "patterns": ["What kinds of models can be hosted with Amazon SageMaker?", "What types of models can be hosted with Amazon SageMaker?", "What types of models could be hosted by Amazon SageMaker?", "What models can Amazon SageMaker host?"],
+        "responses": ["Amazon SageMaker can host any model that adheres to the documented specification for inference Docker images. This includes models created from Amazon SageMaker model artifacts and inference code."],
+        "context": [""]
+        },
+        {"tag": "batchtransform_define",
+        "patterns": ["What is Batch Transform? ", "what is known as Batch Transform?", "Define Batch Transform", "Explain about Batch Transform", "Describe Batch Transform"],
+        "responses": ["Batch Transform enables you to run predictions on large or small batch data. There is no need to break down the data set into multiple chunks or managing real-time endpoints. With a simple API, you can request predictions for a large number of data records and transform the data quickly and easily"],
+        "context": [""]
+        },
+        {"tag": "sagemakerneo_define",
+        "patterns": ["What is Amazon SageMaker Neo ", "what is known as Amazon SageMaker Neo", "Define Amazon SageMaker Neo", "Explain about Amazon SageMaker Neo", "Describe Amazon SageMaker Neo"],
+        "responses": ["Amazon SageMaker Neo enables machine learning models to train once and run anywhere in the cloud and at the edge. SageMaker Neo automatically optimizes models built with popular deep learning frameworks that can be used to deploy on multiple hardware platforms. Optimized models run up to two times faster and consume less than a tenth of the resources of typical machine learning models."],
+        "context": [""]
+        },
+        {"tag": "sagemakerneo_components",
+        "patterns": ["What are the major components of Amazon SageMaker Neo?", "What are Amazon SageMaker Neo's main components?", "What are the main features of Amazon SageMaker Neo?", "What are the main components of Amazon SageMaker Neo?"],
+        "responses": ["Amazon SageMaker Neo contains two major components a compiler and a runtime. First, the Neo compiler reads models exported by different frameworks. It then converts the framework-specific functions and operations into a framework-agnostic intermediate representation. Next, it performs a series of optimizations. Then, the compiler generates binary code for the optimized operations and writes them to a shared object library. The compiler also saves the model definition and parameters into separate files. During execution, the Neo runtime loads the artifacts generated by the compiler -- model definition, parameters, and the shared object library to run the model." ],
+        "context": [""]
+        },
+        {"tag": "sagemaker_regions",
+        "patterns": ["In which regions is Amazon SageMaker available?", "Amazon SageMaker is available in which regions?","Amazon SageMaker is available in which countries?","In which regions can you get Amazon SageMaker?"],
+        "responses": ["For a list of the supported Amazon SageMaker AWS regions, please visit the AWS Region Table for all AWS global infrastructure. Also for more information, see Regions and Endpoints in the AWS General Reference."],
+        "context": [""]
+        },
+        {"tag": "managed_spot_training_instances",
+        "patterns": ["Which instances can I use with Managed Spot Training?", "Which instances are compatible with Managed Spot Training?","Which instances are supported with Managed Spot Training?"],
+        "responses": ["Managed Spot Training can be used with all instances supported in Amazon SageMaker."],
+        "context": [""]
+        },
+        {"tag": "managed_spot_training_awsregions",
+        "patterns": ["Which AWS regions are supported with Managed Spot Training? ", "Managed Spot Training is available in which AWS regions?","Which AWS regions do Managed Spot Training support?","Managed Spot Training is supported in which AWS regions?"],
+        "responses": ["Managed Spot Training is supported on all AWS regions where Amazon SageMaker is currently available.       "],
+        "context": [""]
+        },
+        {"tag": "sagemaker_neo_model_support",
+        "patterns": ["Which models does Amazon SageMaker Neo support?", "Which models is Amazon SageMaker Neo compatible with?","Which models is Amazon SageMaker Neo compatible with?"],
+        "responses": ["Currently, Amazon SageMaker Neo supports the most popular deep learning models that power computer vision applications and the most popular decision tree models used in Amazon SageMaker today. Neo optimizes the performance of AlexNet, ResNet, VGG, Inception, MobileNet, SqueezeNet, and DenseNet models trained in MXNet and TensorFlow, and classification and random cut forest models trained in XGBoost. "],
+        "context": [""]
+        },
+        {"tag": "sagemaker_neo_platform_support",
+        "patterns": ["Which platforms does Amazon SageMaker Neo support?", "Which platforms is Amazon SageMaker Neo compatible with?","Which platforms is Amazon SageMaker Neo compatible with?"],
+        "responses": ["Currently, Neo supports SageMaker ML.C5, ML.C4, ML.M5, ML.M4, ML.P3, and ML.P2 instances and AWS DeepLens, Raspberry Pi, and Jetson TX1 and TX2 devices, and Greengrass devices-based Intel Atom and Intel Xeon CPUs, ARM Cortex-A CPUs, and Nvidia Maxwell and Pascal GPUs."],
+        "context": [""]
+        },
+        {"tag": "sagemaker_neo_awsregions",
+        "patterns": ["In which AWS regions is Amazon SageMaker Neo available?", "Amazon SageMaker Neo is available in which AWS regions?","Amazon SageMaker Neo is accessible in which AWS regions?","What are the AWS regions Amazon SageMaker Neo is available?"],
+        "responses": ["To see a list of support regions, view the AWS region table. Learn more about Amazon SageMaker pricing V "],
+        "context": [""]
+        },
+        {"tag": "manual_stop_sagemaker_autopilot",
+        "patterns": ["Can I stop an Amazon SageMaker Autopilot job manually? ","Is it possible to manually end an Amazon SageMaker Autopilot job?","Can I manually stop an Amazon SageMaker Autopilot job?","Is it possible to manually terminate an Amazon SageMaker Autopilot job?"],
+        "responses": ["Yes. You can stop a job at any time. When an Amazon SageMaker Autopilot job is stopped, all ongoing trials will be stopped and no new trial will be started. Build Models "],
+        "context": [""]
+        },
+        {"tag": "size_limit_dataset",
+        "patterns": ["Are there limits to the size of the dataset I can use for training? ","Is there a size limit to the dataset I can use for training?","Is the size of the dataset I can use for training limited?","Is there a limit on how large a dataset I may utilise for training?"],
+        "responses": ["There are no fixed limits to the size of the dataset you can use for training models with Amazon SageMaker.  "],
+        "context": [""]
+        },
+        {"tag": "amt_outside_sagemaker",
+        "patterns": ["Can I use Automatic Model Tuning outside of Amazon SageMaker?","Is it possible to use Amazon SageMaker's Automatic Model Tuning outside of Amazon SageMaker?"],
+        "responses": ["Not at this time. The best model tuning performance and experience is within Amazon SageMaker. "],
+        "context": [""]
+        },
+        {"tag": "optimize_multiple_objectives",
+        "patterns": ["Can I optimize multiple objectives simultaneously like a model to be both fast and accurate? ","Can I optimise multiple objectives at the same time, like a model, in order to be both fast and accurate?","Is it possible to optimise many objectives at the same time, such as a model, so that it is both fast and accurate?","Is it possible to optimise many objectives at the same time, such as speed and accuracy, in a model?"],
+        "responses": ["Not at this time. Right now, you need to specify a single objective metric to optimize or change your algorithm code to emit a new metric, which is a weighted average between two or more useful metrics, and have the tuning process optimize towards that objective metric."],
+        "context": [""]
+        },
+        {"tag": "reinforcement_training_amazonsagemaker",
+        "patterns": ["Can I train reinforcement learning models in Amazon SageMaker?","Can I use Amazon SageMaker to train reinforcement learning models?","Is it possible to train reinforcement learning models in Amazon SageMaker?"],
+        "responses": ["Yes, you can train reinforcement learning models in Amazon SageMaker in addition to supervised and unsupervised learning models.    "],
+        "context": [""]
+        },
+        {"tag": "rl_lib_sagemakerrl",
+        "patterns": ["Can I bring my own RL libraries and algorithm implementation and run in Amazon SageMaker RL?","Can I bring my own RL libraries and algorithm implementation to Amazon SageMaker RL and run them?","Can I use Amazon SageMaker RL to run my own RL library and algorithm implementation?","Is it possible to use Amazon SageMaker RL to run my own RL libraries and algorithms?"],
+        "responses": ["Yes, you can bring your own RL libraries and algorithm implementations in Docker Containers and run those in Amazon SageMaker RL. "],
+        "context": [""]
+        },
+        {"tag": "dist_rollouts_sagemakerrl",
+        "patterns": ["Can I do distributed rollouts using Amazon SageMaker RL? ","Is Amazon SageMaker RL capable of distributed rollouts?","Can I use Amazon SageMaker RL to perform distributed rollouts?"],
+        "responses": ["Yes. You can even select a heterogeneous cluster where the training can run on a GPU instance and the simulations can run on multiple CPU instances. Deploy Models"],
+        "context": [""]
+        },
+        {"tag": "infrastructure_sagemaker",
+        "patterns": ["Can I access the infrastructure that Amazon SageMaker runs on?","Is it possible for me to gain access to Amazon SageMaker's infrastructure?","Is it possible for me to get access to Amazon SageMaker's infrastructure?","Can I gain access to the infrastructure that Amazon SageMaker is built on?"],
+        "responses": ["No. Amazon SageMaker operates the compute infrastructure on your behalf, allowing it to perform health checks, apply security patches, and do other routine maintenance. You can also deploy the model artifacts from training with custom inference code in your own hosting environment."],
+        "context": [""]
+        },
+        {"tag": "sagemaker_autopilot_dist_train",
+        "patterns": ["Does Amazon SageMaker Autopilot support distributed training?","Is distributed training supported by Amazon SageMaker Autopilot?","Is distributed training possible with Amazon SageMaker Autopilot?"],
+        "responses": ["Yes. All Amazon SageMaker Autopilot built-in algorithms support distributed training out of the box."],
+        "context": [""]
+        },
+        {"tag": "managed_spot_train_checkpoint",
+        "patterns": ["Do I need to periodically checkpoint with Managed Spot Training?","Is it necessary to checkpoint Managed Spot Training on a regular basis?","Do I need to checkpoint Managed Spot Training on a regular basis?","Should I periodically checkpoint Managed Spot Training "],
+        "responses": ["We recommend periodic checkpoints as a general best practice for long running training jobs. This prevents your Managed Spot Training jobs from restarting if capacity is pre-empted. When you enable checkpoints, Amazon SageMaker resumes your Managed Spot Training jobs from the last checkpoint."],
+        "context": [""]
+        },
+        {"tag": "write_rl_agent",
+        "patterns": ["Do I need to write my own RL agent algorithms to train reinforcement learning models?","To train reinforcement learning models, do I need to design my own RL agent algorithms?","Is it necessary for me to write my own RL agent algorithms in order to train reinforcement learning models?"],
+        "responses": ["No, Amazon SageMaker RL includes RL toolkits such as Coach and Ray RLLib that offer implementations of RL agent algorithms such as DQN, PPO, A3C, and many more."],
+        "context": [""]
+        },
+        {"tag": "need_to_convert",
+        "patterns": ["Do I need to use Amazon SageMaker to train my model in order to use Amazon SageMaker Neo to convert the model?","Is it necessary to train my model using Amazon SageMaker before converting it with Amazon SageMaker Neo?","Is it necessary to use Amazon SageMaker to train my model before using Amazon SageMaker Neo to convert it?"],
+        "responses": ["No. You can train models elsewhere and use Neo to optimize them for Amazon SageMaker ML instances or AWS IoT Greengrass supported devices"],
+        "context": [""]
+        },
+        {"tag": "need_specific_version",
+        "patterns": ["Do I need to use a specific version of a framework that is supported on the target hardware? ","Should we need to use a specific version of a framework that is supported on the target hardware?","Do I have to use a specific version of a framework that the target hardware supports?","Is it necessary for me to use a specific version of a framework that is supported by the target hardware?"],
+        "responses": ["No. Developers can run models using the Amazon SageMaker Neo container without dependencies on the framework."],
+        "context": [""]
+        },
+        {"tag": "when_managed_spot_training",
+        "patterns": ["When should I use Managed Spot Training?","When do I need to use Managed Spot Training?","When should Managed Spot Training be used?","When is it appropriate to use Managed Spot Training?"],
+        "responses": ["Managed Spot Training is ideal when you have flexibility with your training runs and when you want to minimize the cost of your training jobs. With Managed Spot Training, you can reduce the cost of training your machine learning models by up to 90%."],
+        "context": [""]
+        },
+        {"tag": "when_reinforced_learning",
+        "patterns": ["When should I use Reinforcement Learning?","When do I need to use Reinforcement Learning?","When should Reinforcement Learning be used?","When is it appropriate to use Reinforcement Learning?"],
+        "responses": ["While the goal of supervised learning techniques is to find the right answer based on the patterns in the training data, the goal of unsupervised learning techniques is to find similarities and differences between data points. In contrast, the goal of reinforcement learning techniques is to learn how to achieve a desired outcome even when it is not clear how to accomplish that outcome. As a result, RL is more suited to enabling intelligent applications where an agent can make autonomous decisions such as robotics, autonomous vehicles, HVAC, industrial control, and more."],
+        "context": [""]
+        },
+        {"tag": "recommend_specific_hyperparameters",
+        "patterns": ["Will you recommend specific hyperparameters for tuning?", "Will you make any recommendations for tuning hyperparameters?","Will you suggest any particular hyperparameters for tuning?"],
+        "responses": ["No. How certain hyperparameters impact the model performance depends on various factors and it is hard to definitively say one hyperparameter is more important than the others and thus needs to be tuned. For built-in algorithms within Amazon SageMaker, we do call out whether or not a hyperparameter is tunable."],
+        "context": [""]
+        },
+        {"tag": "r_support_sagemaker",
+        "patterns": ["Is R supported with Amazon SageMaker?","Is Amazon SageMaker compatible with R?","Is Amazon SageMaker R-compatible?"],
+        "responses": ["Yes, R is supported with Amazon SageMaker. You can use R within SageMaker Notebook instances, which include a pre-installed R kernel and the reticulate library. Reticulate offers an R interface for the Amazon SageMaker Python SDK, enabling machine learning practitioners to build, train, tune, and deploy R models."],
+        "context": [""]
+        },
+        {"tag": "other_questions",
+        "patterns": ["Have more questions?","Do you have any additional questions?","Do you have any more?","Do you have any more questions?"],
+        "responses": ["Contact us Page Content General Build Models Train Models Deploy Models Sign In to the Console Learn About AWS"],
+        "context": [""]
+        },
+        {"tag": "sagemaker_secure_code",
+        "patterns": ["How does Amazon SageMaker secure my code?","How is my code protected with Amazon SageMaker?","How does Amazon SageMaker keep my code safe?"],
+        "responses": ["Amazon SageMaker stores code in ML storage volumes, secured by security groups and optionally encrypted at rest."],
+        "context": [""]
+        },
+        {"tag": "sagemaker_charges",
+        "patterns": ["How am I charged for Amazon SageMaker?","What is the cost of Amazon SageMaker?","How will Amazon SageMaker be charged to me?"],
+        "responses": ["You pay for ML compute, storage, and data processing resources you use for hosting the notebook, training the model, performing predictions, and logging the outputs. Amazon SageMaker allows you to select the number and type of instance used for the hosted notebook, training, and model hosting. You only pay for what you use, as you use it; there are no minimum fees and no upfront commitments. See the Amazon SageMaker pricing page for details."],
+        "context": [""]
+        },
+        {"tag": "difference_between_service",
+        "patterns": ["How is Amazon SageMaker Autopilot different from vertical AI services like Amazon Personalize and Amazon Forecast?","How does Amazon SageMaker Autopilot differ from Amazon Personalize and Amazon Forecast, which are both vertical AI services?","What distinguishes Amazon SageMaker Autopilot from Amazon Personalize and Amazon Forecast, two vertical AI services?"],
+        "responses": ["While Amazon Personalize and Amazon Forecast specifically target at personalized recommendation and forecasting use cases, Amazon SageMaker Autopilot is a generic automatic machine learning solution for classification and regression problems, such as fraud detection, churn analysis, and targeted marketing. Personalize and Forecast focus on simplifying end to end experience by offering training and model hosting in a bundle. You can train models using Amazon SageMaker Autopilot and get full access to the models as well as the pipelines that generated the models. They can then deploy the models to the hosting environment of their choice, or further iterate to improve model quality."],
+        "context": [""]
+        },
+        {"tag": "difference_between_notebooks",
+        "patterns": ["How are SageMaker Studio Notebooks different from the instance based notebooks offering?","What distinguishes SageMaker Studio Notebooks from the instance-based notebooks available?","What distinguishes SageMaker Studio Notebooks from instance-based notebooks?"],
+        "responses": ["SageMaker Studio Notebooks offers a few important features that differentiate it from the instance based notebooks. With the new notebook experience, you can now quickly launch notebooks without needing to manually provision an instance and waiting for it to be operational. The start-up time of launching the UI to read and execute a notebook is faster than the instance based notebooks. You also have the flexibility to choose from a large collection of instance types from within the UI at any time. You will no longer need to go to the AWS console to start new instances and port over your notebooks. Each user has a isolated home directory independent of a particular instance. This directory is automatically mounted into all notebook servers and kernels as theyre started, so you can access your notebooks and other files even when you switch instances to view and run your notebooks. SageMaker Studio Notebooks are integrated with AWS SSO, making it easy to use your organizational credentials to access the notebooks. Notebook sharing is an integrated feature in SageMaker Studio Notebooks. You can also share your notebooks with your peers using a single click."],
+        "context": [""]
+        },
+        {"tag": "sagemaker_notebooks_work",
+        "patterns": ["How do Amazon SageMaker Studio Notebooks work?","What is the procedure for using Amazon SageMaker Studio Notebooks?","What is the functionality of Amazon SageMaker Studio Notebooks?"],
+        "responses": ["Amazon SageMaker Studio Notebooks are one-click Jupyter notebooks that can be spun quickly. The underlying compute resources are fully elastic, so you can easily dial up or down the available resources and the changes take place automatically in the background without interrupting your work. SageMaker also enables one-click sharing of notebooks. You can easily share notebooks with others and theyll get the exact same notebook, saved in the same place. With SageMaker Studio Notebooks you can sign in with your corporate credentials using AWS SSO. Sharing notebooks within and across teams is easy, since the dependencies needed to run a notebook are automatically tracked in work images that are encapsulated with the notebook as it is shared."],
+        "context": [""]
+        },
+        {"tag": "sagemaker_notebooks_work_with_other_services",
+        "patterns": ["How do Amazon SageMaker Studio Notebooks work with other AWS services?","What are the integrations between Amazon SageMaker Studio Notebooks and other AWS services?","How do Amazon SageMaker Studio Notebooks interact with other Amazon Web Services (AWS) services?"],
+        "responses": ["Amazon SageMaker Studio Notebooks give you access to all SageMaker features, such as distributed training, batch transform, hosting, and experiment management. You can access other services such as datasets in Amazon S3, Amazon Redshift, AWS Glue, Amazon EMR, or AWS Lake Formation from SageMaker Notebooks."],
+        "context": [""]
+        },
+        {"tag": "managed_spot_training_use",
+        "patterns": ["How do I use Managed Spot Training?","How do I put Managed Spot Training to use?","How should I go about using Managed Spot Training?"],
+        "responses": ["You enable the Managed Spot Training option when submitting your training jobs and you also specify how long you want to wait for Spot capacity. Amazon SageMaker will then use Amazon EC2 Spot instances to run your job and manages the Spot capacity. You have full visibility into the status of your training job, both while they are running and while they are waiting for capacity."],
+        "context": [""]
+        },
+        {"tag": "managed_spot_training_work",
+        "patterns": ["How does Managed Spot Training work?","What is the procedure for using Managed Spot Training?","What is the functionality of Managed Spot Training"],
+        "responses": ["Managed Spot Training uses Amazon EC2 Spot instances for training, and these instances can be pre-empted when AWS needs capacity. As a result, Managed Spot Training jobs can run in small increments as and when capacity becomes available. The training jobs need not be restarted from scratch when there is an interruption as Amazon SageMaker can resume the training jobs using the latest model checkpoint. The built-in frameworks and the built-in computer vision algorithms with SageMaker enable periodic checkpoints, and you can enable checkpoints with custom models."],
+        "context": [""]
+        },
+        {"tag": "cost_savings_managed_spot_training",
+        "patterns": ["How do you calculate the cost savings with Managed Spot Training jobs?","How do you figure out how much money Managed Spot Training jobs save you?","How do you figure out how much money you'll save with Managed Spot Training jobs?"],
+        "responses": ["Once a Managed Spot Training job is completed, you can see the savings in the AWS management console and also calculate the cost savings as the percentage difference between the duration for which the training job ran and the duration for which you were billed. Regardless of how many times your Managed Spot Training jobs are interrupted, you are charged only once for the duration for which the data was downloaded."],
+        "context": [""]
+        },
+        {"tag": "how_long_hyperparameter_tuning",
+        "patterns": ["How long does a hyperparameter tuning job take?","How long does it take to tune hyperparameters?","What is the average time it takes to do hyperparameter tuning job"],
+        "responses": ["The length of time for a hyperparameter tuning job depends on multiple factors including the size of the data, the underlying algorithm, and the values of the hyperparameters. Additionally, customers can choose the number of simultaneous training jobs and total number of training jobs. All these choices affect how long a hyperparameter tuning job can last.  "],
+        "context": [""]
+        },
+        {"tag": "auto_model_tuning_cost",
+        "patterns": ["How much does Automatic Model Tuning cost?","What is the price of Automatic Model Tuning?","What is the cost of Automatic Model Tuning?"],
+        "responses": ["There is no charge for a hyperparameter tuning job itself. You will be charged by the training jobs that are launched by the hyperparameter tuning job, based on model training pricing."],
+        "context": [""]
+        },
+        {"tag": "difference_between_autopilot_awt",
+        "patterns": ["How do I decide to use Amazon SageMaker Autopilot or Automatic Model Tuning?","How do I know whether I should use Amazon SageMaker Autopilot or Automatic Model Tuning?","What factors should I consider while deciding whether to use Amazon SageMaker Autopilot or Automatic Model Tuning?"],
+        "responses": ["Amazon SageMaker Autopilot automates everything in a typical machine learning workflow, including feature preprocessing, algorithm selection, and hyperparameter tuning, while specifically focusing on classification and regression use cases. Automatic Model Tuning, on the other hand, is designed to tune any model, no matter whether it is based on built-in algorithms, deep learning frameworks, or custom containers. In exchange for the flexibility, you have to manually pick the specific algorithm, determine the hyperparameters to tune, and corresponding search ranges."],
+        "context": [""]
+        },
+        {"tag": "difference_between_reinforced_and_supervised",
+        "patterns": ["How is reinforcement learning different from supervised learning?","What distinguishes reinforcement learning from supervised learning?","When compared to supervised learning, how does reinforcement learning differ?"],
+        "responses": ["Though both supervised and reinforcement learning use mapping between input and output, unlike supervised learning where the feedback provided to the agent is correct set of actions for performing a task, reinforcement learning uses a delayed feedback where reward signals are optimized to ensure a long-term goal through a sequence of actions."],
+        "context": [""]
+        },
+        {"tag": "scale_size_performance",
+        "patterns": ["How do I scale the size and performance of an Amazon SageMaker model once in production?","Once an Amazon SageMaker model is in production, how can I scale its size and performance?","How do I increase the size and performance of an Amazon SageMaker model after it has been deployed?"],
+        "responses": ["Amazon SageMaker hosting automatically scales to the performance needed for your application using Application Auto Scaling. In addition, you can manually change the instance number and type without incurring downtime through modifying the endpoint configuration."],
+        "context": [""]
+        },
+        {"tag": "monitor_sagemaker_production_environment",
+        "patterns": ["How do I monitor my Amazon SageMaker production environment?","How do I keep track of the Amazon SageMaker production environment?","How can I monitor the performance of my Amazon SageMaker environment?"],
+        "responses": ["Amazon SageMaker emits performance metrics to Amazon CloudWatch Metrics so you can track metrics, set alarms, and automatically react to changes in production traffic. In addition, Amazon SageMaker writes logs to Amazon Cloudwatch Logs to let you monitor and troubleshoot your production environment."],
+        "context": [""]
+        },
+        {"tag": "concurrent_api_requests",
+        "patterns": ["How many concurrent real-time API requests does Amazon SageMaker support?","How many simultaneous real-time API calls can Amazon SageMaker handle?","Amazon SageMaker can handle how many concurrent real-time API requests?"],
+        "responses": ["Amazon SageMaker is designed to scale to a large number of transactions per second. The precise number varies based on the deployed model and the number and type of instances to which the model is deployed."],
+        "context": [""]
+        },
+        {"tag": "get_started_with_neo",
+        "patterns": ["How do I get started with Amazon SageMaker Neo?","What is the best way to get started with Amazon SageMaker Neo?","How do I begin using Amazon SageMaker Neo?"],
+        "responses": ["To get started with Amazon SageMaker Neo, you log into the Amazon SageMaker console, choose a trained model, follow the example to compile models, and deploy the resulting model onto your target hardware platform."],
+        "context": [""]
+        },
+        {"tag": "cost_amazon_sagemaker_neo",
+        "patterns": ["How much does it cost to use Amazon SageMaker Neo?","What is the cost of using Amazon SageMaker Neo?","Is Amazon SageMaker Neo expensive to use?","How much does Amazon SageMaker Neo cost?"],
+        "responses": ["You pay for the use of the Amazon SageMaker ML instance that runs inference using Amazon SageMaker Neo."],
+        "context": [""]
+        },
+        {"tag": "human_interference",
+        "patterns": ["I want to talk to a human","Man these robots are annoying","I want to talk to a person","Are there no people here?"],
+        "responses": ["Ok I will re-direct you to a human.Please wait."],
+        "context": [""]
+        }
+      ]
+      }
+      
+      
+      
+                
+      
+      
+      
+      
