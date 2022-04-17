@@ -14,7 +14,7 @@ intents = json.loads(open('intents.json').read())
 words = pickle.load(open('words.pkl','rb'))
 classes = pickle.load(open('classes.pkl','rb'))
 engine = pyttsx3.init()
-
+human=False
 def speak(text):
     engine.say(text)
     engine.runAndWait()
@@ -58,6 +58,7 @@ def predict_class(sentence, model):
     else:
         os.system("cls")
         print("list len is 0")
+        return return_list
 
 def getResponse(ints, intents_json):
     tag = ints[0]['intent']
@@ -71,7 +72,7 @@ def getResponse(ints, intents_json):
 def chatbot_response(msg):
     ints = predict_class(msg, model)
     res = getResponse(ints, intents)
-    return res
+    return res,ints
 
 
 
@@ -82,7 +83,7 @@ from tkinter import *
 
 
 base = Tk()
-base.title("Hello")
+base.title("Customer")
 base.geometry("400x500")
 base.resizable(width=FALSE, height=FALSE)
 
@@ -96,9 +97,50 @@ scrollbar = Scrollbar(base, command=ChatLog.yview, cursor="heart")
 ChatLog['yscrollcommand'] = scrollbar.set
 
 def send():
-
+    
     msg=EntryBox.get("1.0",'end-1c').strip()
     EntryBox.delete("0.0",END)
+
+
+    global human
+    
+    if human==True:
+        with open("customer.txt","w") as c:
+            c.write(msg)
+
+        with open("agent.txt","r+") as a:
+            temp=""
+            while temp=="":
+                time.sleep(0.5)
+                temp=a.read()
+            ans=temp[temp.find(":")+1:]
+            ChatLog.insert(END,"Agent :"+ ans + '\n\n')
+            a.truncate(0)
+        int=temp[0:temp.find(":")]
+        # data_file = open('intents.json').read()
+        # intents2 = json.loads(data_file)
+        temp_dict=            {"tag": int,
+        "patterns": [msg],
+        "responses": [ans],
+        "context": [""]
+        }
+        # intents2.update(temp_dict)
+        # with open('intents.json', 'w') as json_file:
+        #     json.dump(intents2, json_file)
+        data_file = open('intents.json').read()
+        intents2 = json.loads(data_file)
+        # temp_dict=            {"tag": [rand],
+        # "patterns": [msg],
+        # "responses": [ans],
+        # "context": [""]
+        # }
+        intents2['intents'].append(temp_dict)
+        with open('intents.json', 'w') as json_file:
+            json.dump(intents2, json_file)
+        
+        
+        return 
+
 
 
     if msg != '':
@@ -107,7 +149,7 @@ def send():
         ChatLog.insert(END, "You: " + msg + '\n\n')
         ChatLog.config(foreground="#442265", font=("Verdana", 12 ))
     
-        res = chatbot_response(msg)
+        res,no_use = chatbot_response(msg)
         ChatLog.insert(END, "Bot: " + res + '\n\n')
             
         ChatLog.config(state=DISABLED)
@@ -135,18 +177,29 @@ SendButton = Button(base, font=("Verdana",12,'bold'), text="Send", width="12", h
                     command= send )
 
 def send2(msg):
-
-
+   
+    global human
     if msg != '':
         
         ChatLog.config(state=NORMAL)
         ChatLog.insert(END, "You: " + msg + '\n\n')
         ChatLog.config(foreground="#442265", font=("Verdana", 12 ))
-    
-        res = chatbot_response(msg)
-        # speak(res)
-        # with open("speak.txt","w") as f:
-        #     f.write(res)
+
+
+        res,ints = chatbot_response(msg)
+        # global intents
+        tag = ints[0]['intent']
+        # list_of_intents = intents['intents']
+        # for i in list_of_intents:
+        if(tag=="human_interference"):
+            ChatLog.insert(END, "Connecting.... " +'\n\n')
+            human=True
+            return
+                
+              
+        
+
+        
         ChatLog.insert(END, "Bot: " + res + '\n\n')
        
             
@@ -163,19 +216,19 @@ SendButton.place(x=6, y=401, height=90)
 
 #base.mainloop()
 to_talk=""
+
 while True:
     
     base.update_idletasks()
-    f=open("text_and_status.txt","r+")
-    text=f.read()
-    if text!="":
-        to_talk=send2(text)
-        f.truncate(0)
-    f.close()
-
-
+    if human==False:
+        f=open("text_and_status.txt","r+")
+        text=f.read()
+        if text!="":
+            to_talk=send2(text)
+            f.truncate(0)
+        f.close()
 
     base.update()
-    if to_talk!="":
+    if to_talk!="" and human!=True:
         speak(to_talk)
         to_talk=""
