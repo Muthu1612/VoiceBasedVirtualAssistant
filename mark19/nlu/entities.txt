@@ -1,8 +1,0 @@
-close\exit
-time\getDate
-open\notepad
-time\getWeather
-open\mpc
-time\getTime
-time\getYear
-open\chrome
