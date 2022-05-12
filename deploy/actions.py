@@ -60,7 +60,7 @@ class Actions:
         else:
             return random.choice(
                 [
-                    "I'm sorry to hear about there. You can check the battery health in your\
+                    "I'm sorry to hear about that. You can check the battery health in your\
                                   settings. If it is below 75%, please consider getting it replaced at your local apple store"
                 ]
             )
@@ -68,7 +68,7 @@ class Actions:
     def forgot_pass(self):
         reset_appleid = "https://support.apple.com/en-us/HT201355"
         return f"I'm sorry to hear about that, go to {reset_appleid}"
-        # return f"I'm sorry to hear about that, go to https://support.apple.com/en-us/HT201355"
+
     def payment(self):
         return random.choice(
             ["Login with your Apple ID and update your payment method"]
@@ -77,7 +77,7 @@ class Actions:
     def challenge_robot(self):
         return random.choice(
             [
-                "I am Q w Q, your personal assitant, and I was designed by Matthew to assist you.",
+                "I am EVE, your personal assitant, and I was designed by Matthew to assist you.",
             ]
         )
 

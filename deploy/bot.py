@@ -6,13 +6,36 @@ from initialize_intent_classifier import infer_intent
 import pandas as pd
 import numpy as np
 import yaml
-
+import pyttsx3
 from streamlit import caching
 
 # Visualization
 import matplotlib.pyplot as plt
 import seaborn as sns
+from multiprocessing import Process
+engine = pyttsx3.init()
 
+# def speak(text):
+#     try:
+#         engine.say(text)
+#         engine.runAndWait()
+#     except:
+#         engine.stop()
+
+
+def speakfunc(text):
+
+    engine.say(text)
+    engine.runAndWait()
+
+def speak(audio):
+    try:
+        p = Process(target=speakfunc, args=(audio,))
+        p.start()
+    except KeyboardInterrupt:
+        p.terminate()
+
+    p.join()
 # Loading in entities
 with open(r"../objects/entities.yml") as file:
     entities = yaml.load(file, Loader=yaml.FullLoader)
@@ -28,10 +51,10 @@ sns.set(style="ticks", color_codes=True)
 sns.set_style(style="whitegrid")
 
 # Response template
-respond = lambda response: f" Q w Q : {response}"
+respond = lambda response: f" Q w Q: {response}"
 
 
-def main(phrase="Tell Q w Q something!"):
+def main(phrase="Tell  Q w Q  something!"):
 
     # Instantiating class object for this conversation
     a = Actions(phrase)
@@ -138,41 +161,66 @@ def listener(max_intent, entity, actions):
 
     if max_intent == "greeting":
         st.text(respond(a.utter_greet()))
-
+        temp=a.utter_greet()
+        speak(temp)
+        end = follow_up()
     elif max_intent == "info":
         st.text(respond(a.info(entity)))
+        temp=a.info(entity)
+        speak(temp)
         end = follow_up()
     elif max_intent == "update":
         st.text(respond(a.update(entity)))
+        temp=a.update(entity)
+        speak(temp)
         end = follow_up()
     elif max_intent == "forgot_password":
         st.text(respond(a.forgot_pass()))
+        temp=a.forgot_pass()
+        speak(temp)
+        # st.text(respond(a.forgot_pass()))
         end = follow_up()
     elif max_intent == "challenge_robot":
         st.text(respond(a.challenge_robot()))
+        temp=a.challenge_robot()
+        speak(temp)
+
     elif max_intent == "goodbye":
         st.text(respond(a.utter_goodbye()))
+        temp=a.utter_goodbye()
+        speak(temp)
         st.image("images/eve-bye.jpg", width=400)
-        st.text(" Q w Q waves you goodbye!")
+        st.text("Q w Q waves you goodbye!")
     elif max_intent == "payment":
         st.text(respond(a.payment()))
+        temp=a.payment()
+        speak(temp)
         end = follow_up()
     elif max_intent == "speak_representative":
         st.text(respond(a.link_to_human()))
+        temp=a.link_to_human()
+        speak(temp)
         st.image("images/representative.png")
     elif max_intent == "battery":
         st.text(respond(a.battery(entity)))
+        temp=a.battery(entity)
+        speak(temp)
         end = follow_up()
     elif max_intent == "fallback":
         st.text(respond(a.fallback()))
-
+        temp=a.fallback()
+        speak(temp)
+    # speak(temp)
+    # st.text(respond(temp))
+    # speak(temp)
+    # end = follow_up()
     return end
 
 
 def backend_dash(intents, user_input, history_df):
     """ Visualizes with a dashboard the entire dialogue state of a conversation given state params """
     # Showing predictions
-    st.subheader(" Q w Q's Predictions")
+    st.subheader("Q w Q's Predictions")
     # Further unpacking
     user_input, pred = intents
     pred = {k: round(float(v), 3) for k, v in pred.items()}
