@@ -1,0 +1,85 @@
+commands:
+  # Time
+  - command:
+    input: What time is?
+    entity: time
+    action: getTime
+  - command:
+    input: Tell me the time
+    entity: time
+    action: getTime
+  # Date
+  - command:
+    input: What date is?
+    entity: time
+    action: getDate
+  - command:
+    input: Tell me the date.
+    entity: time
+    action: getDate
+  # Year
+  - command:
+    input: Tell me which year is
+    entity: time
+    action: getYear
+  - command:
+    input: Which year is it?
+    entity: time
+    action: getYear
+  # Weather
+  - command:
+    input: What's the weather?
+    entity: time
+    action: getWeather
+  - command:
+    input: What's the weather like?
+    entity: time
+    action: getWeather
+  # Open
+  - command:
+    input: Open Notepad
+    entity: open
+    action: notepad
+  - command:
+    input: Start Notepad
+    entity: open
+    action: notepad
+  - command:
+    input: Open Chrome
+    entity: open
+    action: chrome
+  - command:
+    input: Start Chrome
+    entity: open
+    action: chrome
+  - command:
+    input: Start Media player classic
+    entity: open
+    action: mpc
+  - command:
+    input: Open Media player classic
+    entity: open
+    action: mpc
+  # Close
+  - command:
+    input: Exit
+    entity: close
+    action: exit
+  - command:
+    input: Quit
+    entity: close
+    action: exit
+  - command:
+    input: Stop
+    entity: close
+    action: exit
+
+
+
+
+
+
+
+
+
+  
